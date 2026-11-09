@@ -46,7 +46,7 @@ React 19 + TypeScript, Vinext/Vite, Cloudflare Worker API, D1 (SQLite), R2.
 
 ## Локальный запуск
 
-Node.js 24 (минимум 22.13), npm и Git.
+Node.js 24, npm и Git. Эта версия использовалась для сборки и тестов; импорт TypeScript в тестах использует встроенную поддержку Node 24.
 
 ```sh
 npm ci
