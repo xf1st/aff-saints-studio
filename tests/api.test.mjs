@@ -30,8 +30,8 @@ async function api(path, payload, expected = 200, options = {}) {
     throw new Error(path + " HTTP " + r.status + ": " + raw);
   }
   assert.equal(r.status, expected, JSON.stringify(value));
-  if (r.headers.get("set-cookie"))
-    cookie = r.headers.get("set-cookie").split(";")[0];
+  const sessionCookie = r.headers.getSetCookie().find(value => value.startsWith("saints_demo="));
+  if (sessionCookie) cookie = sessionCookie.split(";")[0];
   if (value.version) version = value.version;
   return value;
 }
